@@ -35,6 +35,7 @@ public:
 	}
 	void printFraction()
 	{
+		reduce();
 		cout << "Fraction: " << numerator << "/" << denominator << endl;
 
 	}
@@ -42,22 +43,16 @@ public:
 	{
 		numerator = (numerator * y) + (x * denominator);
 		denominator = denominator * y;
-		reduce();
-
 	}
 	void subtract(int x, int y)
 	{
 		numerator = (numerator * y) - (x * denominator);
 		denominator = denominator * y;
-		reduce();
-
 	}
 	void multiply(int x, int y)
 	{
 		numerator = numerator * x;
 		denominator = denominator * y;
-		reduce();
-
 	}
 	void divide(int x, int y)
 	{
@@ -65,7 +60,6 @@ public:
 		{
 			numerator = numerator * y;
 			denominator = denominator * x;
-			reduce();
 		}
 		else
 		{
